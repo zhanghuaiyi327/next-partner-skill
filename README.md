@@ -1,133 +1,228 @@
-# 增强版后任生成器 (create-next-partner-optimized)
+# Create Next Partner Skill - 创建理想伴侣Skill
 
-基于前任分析和下一任要求生成理想伴侣Skill的增强版系统。支持自动化数据采集、智能性格分析、兼容性评估和持续进化。
+基于前任经验，智能生成你的理想下一任伴侣Skill。
 
-## 🎯 核心功能
+## 核心理念
 
-### 1. **混合数据采集模式**
-- **自动化采集**: 支持飞书、钉钉自动采集消息和文档
-- **文件上传**: 支持PDF、图片、JSON、邮件等多种格式
-- **链接解析**: 支持飞书文档链接直接解析
-- **手动输入**: 交互式数据收集界面
+从失败的关系中学习，继承前任的优点，避免前任的缺点，结合你的具体要求，生成一个理想的下一任伴侣Skill。
 
-### 2. **智能分析引擎**
-- **前任分析**: 自动识别优点、缺点和关系模式
-- **要求分析**: 分析下一任的具体要求和优先级
-- **自动化数据分析**: 从实际数据中提取性格特征和沟通模式
-- **兼容性分析**: 多维度评估关系兼容性
+## 安装到Claude Code
 
-### 3. **增强版Skill生成**
-- **完整档案**: 包含性格特征、价值观、生活方式等
-- **兼容性报告**: 详细的兼容性分析和建议
-- **成长计划**: 具体的关系发展行动计划
-- **关系洞察**: 从前任关系中提取的经验教训
+### 方法一：安装到当前项目（在git仓库根目录执行）
+```bash
+mkdir -p .claude/skills
+git clone https://github.com/zhanghuaiyi327/imagenation-skill .claude/skills/create-next-partner
+```
 
-### 4. **持续进化能力**
-- **版本管理**: 完整的版本控制和备份
-- **增量更新**: 支持基于新信息的Skill更新
-- **纠正机制**: 支持用户反馈和纠正
+### 方法二：安装到全局（所有项目都能用）
+```bash
+git clone https://github.com/zhanghuaiyi327/imagenation-skill ~/.claude/skills/create-next-partner
+```
 
-## 📁 项目结构
+### 依赖（可选）
+```bash
+pip3 install -r create-next-partner-optimized/requirements.txt
+```
+
+## 使用
+
+在Claude Code中输入：
+
+```
+/create-next-partner
+```
+
+按提示输入：
+1. 前任的优缺点分析
+2. 从关系中学习的经验教训
+3. 对下一任的具体要求
+4. 选择数据来源（可选）
+
+所有字段均可跳过，仅凭描述也能生成。
+
+完成后用 `/{partner_code}` 调用该伴侣Skill，开始与你的理想伴侣对话。
+
+## 管理命令
+
+| 命令 | 说明 |
+|------|------|
+| `/create-next-partner` | 创建新的理想伴侣Skill |
+| `/list-partners` | 列出所有伴侣Skill |
+| `/{partner_code}` | 调用完整伴侣Skill（像ta一样跟你聊天） |
+| `/{partner_code}-memory` | 回忆模式（帮你回忆那些事） |
+| `/{partner_code}-persona` | 仅人物性格 |
+| `/partner-rollback {partner_code} {version}` | 回滚到历史版本 |
+| `/delete-partner {partner_code}` | 删除 |
+| `/let-go {partner_code}` | 放下（delete的温柔别名） |
+
+## 效果示例
+
+**输入**：
+- 前任优点：体贴关心、幽默风趣、有责任心
+- 前任缺点：情绪不稳定、缺乏安全感
+- 经验教训：沟通要及时、尊重个人空间、价值观要一致
+- 下一任要求：情绪稳定、善于沟通、尊重个人空间
+
+**场景一：日常聊天**
+
+```
+用户      ❯ 今天工作好累啊
+
+伴侣.skill ❯ 辛苦了，先休息一下吧
+             我给你泡杯茶？
+             晚上想吃什么，我来做
+```
+
+**场景二：情感支持**
+
+```
+用户      ❯ 我有点焦虑，不知道该怎么办
+
+伴侣.skill ❯ 没关系，慢慢来
+             我在这里陪着你
+             要不要聊聊是什么让你焦虑？
+```
+
+**场景三：冲突处理**
+
+```
+用户      ❯ 我觉得我们最近沟通有点少
+
+伴侣.skill ❯ 你说得对，我也注意到了
+             我们找个时间好好聊聊吧
+             你觉得什么时间比较合适？
+```
+
+## 功能特性
+
+### 数据源
+
+| 来源 | 格式 | 备注 |
+|------|------|------|
+| 前任分析 | 结构化描述 | 优点、缺点、经验教训 |
+| 用户要求 | 结构化描述 | 必须特质、希望特质、底线特质 |
+| 聊天记录 | WeChatMsg / 留痕 / PyWxDump 导出 | 提取沟通模式 |
+| 照片 | JPEG/PNG（含EXIF） | 提取时间线和地点 |
+| 口述/粘贴 | 纯文本 | 你的主观记忆和期望 |
+
+### 生成的Skill结构
+
+每个伴侣Skill由三部分组成，共同驱动输出：
+
+| 部分 | 内容 |
+|------|------|
+| **Part A - 前任经验继承** | 需要继承的优点、需要避免的缺点、关键经验教训应用 |
+| **Part B - 理想特质实现** | 必须特质体现、希望特质实现、底线特质避免 |
+| **Part C - 完整人格面具** | 5层性格结构：核心价值观 → 性格特征 → 沟通风格 → 情感模式 → 关系行为 |
+
+**运行逻辑**：收到消息 → 人格面具判断ta会怎么回 → 前任经验指导回应方式 → 理想特质确保符合要求 → 用理想的方式输出
+
+### 支持的分析维度
+
+**大五人格模型**：
+- 外向性：社交活跃度、能量来源
+- 宜人性：合作倾向、同理心水平
+- 尽责性：组织能力、责任感
+- 情绪稳定性：情绪波动、压力反应
+- 开放性：好奇心、创造力
+
+**关系特定特征**：
+- 情感表达风格：频率、方式、深度
+- 亲密需求模式：强度、表达方式、个人空间需求
+- 边界意识：清晰度、他人尊重、沟通能力
+- 支持行为模式：频率、方式、有效性
+
+**兼容性分析**：
+- 价值观兼容性：家庭观念、事业追求、个人成长理念
+- 性格兼容性：大五人格互补性、关系行为协调性
+- 生活方式兼容性：日常生活协调、社交休闲匹配
+- 未来发展兼容性：短期目标协调、长期愿景契合
+
+## 进化机制
+
+1. **追加信息** → 找到更多前任分析/具体要求 → 自动分析增量 → merge进对应部分
+2. **对话纠正** → 说"ta不会这样说" → 写入Correction层，立即生效
+3. **版本管理** → 每次更新自动存档，支持回滚
+4. **兼容性优化** → 基于实际互动调整兼容性评估
+
+## 项目结构
+
+本项目遵循AgentSkills开放标准：
 
 ```
 create-next-partner-optimized/
-├── SKILL.md                    # 主Skill文件
-├── README.md                   # 项目说明
-├── requirements.txt            # Python依赖
-├── test_enhanced_workflow.py   # 系统测试
-├── prompts/                    # 提示词模板
-├── tools/                      # 工具脚本
-│   ├── data_collector.py       # 增强版数据收集器
-│   ├── skill_writer.py         # 增强版Skill生成器
-│   ├── version_manager.py      # 版本管理工具
-│   ├── feishu_auto_collector.py # 飞书自动采集
-│   ├── dingtalk_auto_collector.py # 钉钉自动采集
-│   ├── feishu_parser.py        # 飞书解析器
-│   ├── feishu_browser.py       # 飞书浏览器方案
-│   ├── feishu_mcp_client.py    # 飞书MCP方案
-│   └── email_parser.py         # 邮件解析器
-├── docs/                       # 文档
-├── assets/                     # 资源文件
-└── test_data/                  # 测试数据
+├── SKILL.md                # skill入口（官方frontmatter）
+├── README.md               # 项目说明（本文件）
+├── prompts/                # Prompt模板
+│   ├── intake.md           #   基础信息收集
+│   ├── ex_analyzer.md      #   前任性格分析
+│   ├── persona_analyzer.md #   性格特征提取（大五人格+关系特征）
+│   ├── compatibility_analyzer.md # 兼容性分析
+│   ├── profile_builder.md  #   伴侣档案生成模板
+│   ├── merger.md           #   增量merge逻辑
+│   └── correction_handler.md # 对话纠正处理
+├── tools/                  # Python工具
+│   ├── data_collector.py   # 数据收集和验证
+│   ├── skill_writer.py     # Skill文件管理
+│   └── version_manager.py  # 版本存档与回滚
+├── docs/                   # 文档
+├── requirements.txt        # Python依赖
+└── LICENSE                 # 许可证
 ```
 
-## 🚀 快速开始
+## 工作流程
 
-### 1. 安装依赖
+### 1. 信息收集阶段
+- 收集前任分析（优点、缺点、经验教训）
+- 收集用户对下一任的具体要求
+- 选择数据来源（可选）
 
-```bash
-pip install -r requirements.txt
-```
+### 2. 分析处理阶段
+- 前任性格特征提取（基于大五人格模型）
+- 关系特定特征分析
+- 兼容性评估
+- 理想特质匹配度分析
 
-### 2. 数据收集
+### 3. 档案生成阶段
+- 生成完整伴侣档案
+- 创建人格面具
+- 设置关系行为模式
+- 建立兼容性评估体系
 
-```bash
-# 交互式数据收集
-python tools/data_collector.py
+### 4. 进化优化阶段
+- 基于新信息增量更新
+- 对话纠正实时调整
+- 版本管理支持回滚
+- 兼容性持续优化
 
-# 或使用现有数据文件
-python tools/data_collector.py --input your_data.json --output collected_data.json
-```
+## 注意事项
 
-### 3. 生成Skill
+1. **数据质量决定生成质量**：提供越详细的前任分析和具体要求，生成的伴侣Skill越符合期望
+2. **建议优先提供**：具体的行为例子 > 抽象的性格描述
+3. **兼容性评估**：系统会评估生成的伴侣与你的兼容性，提供关系发展建议
+4. **健康使用**：本项目旨在帮助你从过去的关系中学习，明确自己的需求，建立更健康的关系期望
+5. **现实与理想的平衡**：生成的伴侣Skill是基于你的输入和分析，实际关系需要双方共同努力
 
-```bash
-# 生成增强版Skill
-python tools/skill_writer.py --input collected_data.json --skill-name ideal_partner
+## 技术特点
 
-# 带调试信息
-python tools/skill_writer.py --input collected_data.json --skill-name ideal_partner --debug
-```
+- **基于大五人格模型**：科学的性格分析框架
+- **关系特定特征分析**：专门针对关系行为的分析维度
+- **兼容性评估系统**：全面的匹配度分析
+- **增量更新机制**：支持持续学习和优化
+- **版本管理**：完整的变更历史和回滚支持
+- **错误纠正**：实时对话纠正和调整
 
-### 4. 查看结果
+## 许可证
 
-生成的Skill文件位于 `partners/{skill_name}/` 目录，包含：
-- `SKILL.md` - 主档案文件
-- `profile.json` - 核心档案数据
-- `compatibility.md` - 兼容性分析
-- `growth_plan.md` - 成长计划
-- `relationship_insights.md` - 关系洞察
-- `metadata.json` - 元数据
+MIT License
 
-## 🔧 高级功能
+## 贡献
 
-### 自动化数据采集
+欢迎提交Issue和Pull Request！
 
-#### 飞书自动采集
-```bash
-# 首次配置
-python tools/feishu_auto_collector.py --setup
+## 支持
 
-# 采集数据
-python tools/feishu_auto_collector.py --name "张三" --output-dir ./knowledge/zhangsan
-```
-
-#### 钉钉自动采集
-```bash
-# 首次配置
-python tools/dingtalk_auto_collector.py --setup
-
-# 采集数据
-python tools/dingtalk_auto_collector.py --name "李四" --output-dir ./knowledge/lisi
-```
-
-### Skill管理
-
-#### 列出所有Skill
-```bash
-python tools/skill_writer.py --list
-```
-
-#### 获取Skill信息
-```bash
-python tools/skill_writer.py --info skill_name
-```
-
-#### 更新Skill
-```bash
-python tools/skill_writer.py --update skill_name --update-data new_data.json
-```
-
+如有问题，请提交GitHub Issue或联系维护者。
 ## 📊 数据分析维度
 
 ### 性格特征分析
@@ -146,19 +241,6 @@ python tools/skill_writer.py --update skill_name --update-data new_data.json
 - **可重复的成功模式**: 从前任关系中提取的积极模式
 - **要避免的问题模式**: 需要避免的负面模式
 - **关系健康信号**: 绿色信号和红色信号识别
-
-## 🧪 测试系统
-
-运行完整测试：
-
-```bash
-python test_enhanced_workflow.py
-```
-
-测试内容包括：
-1. 数据收集器功能测试
-2. Skill生成器功能测试
-3. 完整集成工作流程测试
 
 ## 📈 输出示例
 
@@ -247,10 +329,5 @@ python test_enhanced_workflow.py
 ## 🙏 致谢
 
 感谢所有贡献者和用户的支持，特别感谢：
-- 原版create-next-partner项目的启发
-- colleague-skill-main项目的自动化工具
+- 原版同事.skill项目的启发
 - 所有提供反馈和建议的用户
-
----
-
-**开始使用**: 运行 `python tools/data_collector.py` 开始创建你的理想伴侣档案！
