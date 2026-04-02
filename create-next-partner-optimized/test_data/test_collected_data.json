@@ -1,0 +1,122 @@
+{
+  "basic_info": {
+    "partner_code": "test_ideal_partner",
+    "ex_name": "测试前任",
+    "relationship_duration": "2年",
+    "breakup_reason": "价值观不一致，沟通不畅",
+    "key_lessons": [
+      "沟通要及时，不要积累问题",
+      "需要相互尊重个人空间",
+      "价值观一致很重要"
+    ]
+  },
+  "manual_data": {
+    "ex_strengths": [
+      {
+        "trait": "体贴关心",
+        "example": "生病时会照顾，记得重要日子",
+        "impact": "让人感受到被爱和被重视",
+        "category": "relationship_skill",
+        "priority": "inherit"
+      },
+      {
+        "trait": "幽默风趣",
+        "example": "能调节气氛，让相处轻松愉快",
+        "impact": "减少关系中的压力",
+        "category": "personality",
+        "priority": "inherit"
+      },
+      {
+        "trait": "有共同兴趣",
+        "example": "都喜欢音乐和旅行",
+        "impact": "有共同话题和活动",
+        "category": "habit",
+        "priority": "inherit"
+      }
+    ],
+    "ex_weaknesses": [
+      {
+        "trait": "情绪不稳定",
+        "impact": "经常因为小事发脾气，难以预测",
+        "avoidable": true,
+        "severity": "high",
+        "category": "personality"
+      },
+      {
+        "trait": "缺乏安全感",
+        "impact": "需要频繁确认关系，造成压力",
+        "avoidable": true,
+        "severity": "medium",
+        "category": "relationship_skill"
+      }
+    ],
+    "next_requirements": {
+      "must_have": [
+        {
+          "trait": "情绪稳定",
+          "reason": "希望关系稳定可预测",
+          "priority": "高",
+          "non_negotiable": true
+        },
+        {
+          "trait": "善于沟通",
+          "reason": "能有效解决问题",
+          "priority": "高",
+          "non_negotiable": true
+        },
+        {
+          "trait": "尊重个人空间",
+          "reason": "需要独立性和信任",
+          "priority": "高",
+          "non_negotiable": true
+        }
+      ],
+      "nice_to_have": [
+        {
+          "trait": "喜欢旅行",
+          "priority": "低",
+          "non_negotiable": false
+        },
+        {
+          "trait": "有幽默感",
+          "priority": "低",
+          "non_negotiable": false
+        }
+      ],
+      "deal_breakers": [
+        {
+          "trait": "控制欲强",
+          "reason": "需要自由和尊重",
+          "severity": "critical"
+        },
+        {
+          "trait": "不诚实",
+          "reason": "信任是关系的基础",
+          "severity": "critical"
+        }
+      ],
+      "lifestyle": {
+        "work_life_balance": "平衡",
+        "social_style": "适中",
+        "future_plans": "有稳定规划",
+        "hobbies_interests": "音乐、旅行、阅读"
+      }
+    }
+  },
+  "automated_data": {
+    "success": true,
+    "method": "paste_text",
+    "files": [
+      "pasted_content.txt"
+    ],
+    "content": {
+      "pasted_content.txt": "测试沟通记录：\n张三: 今天工作怎么样？\n李四: 还不错，完成了项目的第一阶段。\n张三: 太好了！晚上一起吃饭庆祝一下？\n李四: 好啊，我知道一家新开的餐厅。\n张三: 听起来不错，几点见面？\n李四: 7点怎么样？我6点下班。\n张三: 好的，到时候见！\n\n测试文档内容：\n最近在读《非暴力沟通》，觉得沟通真的很重要。\n特别是表达感受和需求，而不是指责对方。\n希望能在关系中实践这些原则。\n\n兴趣爱好：\n喜欢旅行，特别是自然风光。\n最近在学吉他，希望能弹几首简单的曲子。\n周末喜欢去咖啡馆看书，享受安静时光。"
+    },
+    "output_dir": "C:\\Users\\24370\\AppData\\Local\\Temp\\tmppghortrt"
+  },
+  "metadata": {
+    "collected_at": "2026-04-02T13:52:13.257644",
+    "collection_method": "paste_text",
+    "version": "2.0.0"
+  }
+}

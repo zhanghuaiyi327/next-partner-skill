@@ -1,0 +1,106 @@
+{
+  "basic_info": {
+    "partner_code": "test_ideal_partner",
+    "generated_at": "2026-04-02T13:52:13.398779",
+    "version": "2.0.0"
+  },
+  "personality_profile": {
+    "core_traits": [
+      {
+        "trait": "体贴关心",
+        "source": "inherited_from_ex",
+        "priority": "high"
+      },
+      {
+        "trait": "幽默风趣",
+        "source": "inherited_from_ex",
+        "priority": "high"
+      },
+      {
+        "trait": "有共同兴趣",
+        "source": "inherited_from_ex",
+        "priority": "high"
+      },
+      {
+        "trait": "具有personality特质",
+        "source": "user_requirement",
+        "priority": "high"
+      },
+      {
+        "trait": "具有relationship_skill特质",
+        "source": "user_requirement",
+        "priority": "high"
+      }
+    ],
+    "communication_style": [],
+    "emotional_expression": "平衡适中",
+    "big_five_profile": {
+      "extraversion": 6,
+      "agreeableness": 7,
+      "conscientiousness": 8,
+      "emotional_stability": 8,
+      "openness": 6
+    },
+    "strengths_to_inherit": [
+      "体贴关心",
+      "幽默风趣",
+      "有共同兴趣"
+    ],
+    "traits_to_develop": [
+      "personality",
+      "relationship_skill"
+    ]
+  },
+  "relationship_preferences": {
+    "communication_needs": "平衡",
+    "intimacy_level": "平衡",
+    "independence_need": "高",
+    "conflict_resolution": "建设性沟通",
+    "support_style": "相互支持"
+  },
+  "lifestyle_preferences": {
+    "work_life_balance": "平衡",
+    "social_style": "适中",
+    "hobbies_interests": [],
+    "future_orientation": "有稳定规划",
+    "health_habits": [
+      "规律作息",
+      "适度运动"
+    ]
+  },
+  "compatibility_summary": {
+    "strength_alignment_score": 2,
+    "weakness_avoidance_score": 0,
+    "value_compatibility": [],
+    "overall_compatibility": "中等",
+    "key_alignments": [],
+    "potential_challenges": []
+  },
+  "growth_focus": [
+    {
+      "area": "沟通要及时，不要积累问题",
+      "priority": "high",
+      "action": "在下一段关系中应用这个教训"
+    },
+    {
+      "area": "需要相互尊重个人空间",
+      "priority": "high",
+      "action": "在下一段关系中应用这个教训"
+    },
+    {
+      "area": "价值观一致很重要",
+      "priority": "high",
+      "action": "在下一段关系中应用这个教训"
+    },
+    {
+      "area": "避免前任的缺点: 情绪不稳定",
+      "priority": "high",
+      "action": "寻找没有情绪不稳定特质的伴侣"
+    },
+    {
+      "area": "避免前任的缺点: 缺乏安全感",
+      "priority": "medium",
+      "action": "寻找没有缺乏安全感特质的伴侣"
+    }
+  ]
+}
